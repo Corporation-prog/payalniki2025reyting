@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,5">
+    <title>Голосование: Лучший паяльник 2025 года</title>
+    <style>
+        :root {
+            --mark: false;
+        
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            margin: auto;
+            padding: auto;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+        
+        .head_color {
+            background-color: #2c3e50;
+            align-items: center;
+            text-align: center;
+            color: white;
+
+        }
+        .head_2_text {
+            padding: 20px;
+            align-items: center;
+            text-align: center;
+            flex-grow: 1;
+        }
+        .head_3_but {
+            padding: 20px;
+            text-align: center;
+            display: flex;
+        }
+        h1 {
+            margin: 0;
+        }
+        
+        .vote-container {
+            background-color: white;
+            padding: 25px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        
+        .soldering-iron {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+        
+        .soldering-iron:hover {
+            border-color: #3498db;
+            background-color: #f8f9fa;
+        }
+        
+        .soldering-iron img {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+            margin-right: 20px;
+            border: 1px solid #eee;
+            border-radius: 3px;
+            padding: 5px;
+        }
+        
+        .soldering-iron-info {
+            flex-grow: 1;
+        }
+        
+        .soldering-iron h3 {
+            margin-top: 0;
+            color: #2c3e50;
+        }
+        
+        .vote-btn {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        
+        .vote-btn:hover {
+            background-color: #2980b9;
+        }
+        
+        .vote-count {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-left: 10px;
+        }
+        
+        .results-link {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            color: #3498db;
+            text-decoration: none;
+        }
+        
+        .results-link:hover {
+            text-decoration: underline;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #7f8c8d;
+            font-size: 14px;
+        }
+        
+        .description {
+            margin-bottom: 30px;
+            line-height: 1.7;
+        }
+        .but_tg {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.3s;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="head_color">
+        <div class="head_3_but">
+        <div class="head_2_text">
+            <h1>Голосование за лучший паяльник 2025 года</h1>
+            <p>Выберите самый достойный инструмент для пайки</p>
+        </div>
+        <img src="image/photo.jpg" alt="Ваш аккаунт" width="50px" height="50px" style="border-radius: 20px; margin: auto ;" >
+            </div>
+    </div>
+    <div class="vote-container">
+        <div class="description">
+            <p>Примите участие в нашем ежегодном голосовании и помогите определить лучший паяльник 2025 года. Ваше мнение важно для сообщества радиолюбителей и профессионалов!</p>
+            <p>Голосование продлится до 1 июня 2025 года. Результаты будут опубликованы на нашем сайте.</p>
+        </div>
+        
+        <div class="soldering-iron">
+            <img src="https://cdn.vseinstrumenti.ru/images/goods/elektrika-i-svet/elektropayalnoe-oborudovanie/1145372/1000x1000/51780779.jpg" alt="Паяльник Hakko FX-888D">
+            <div class="soldering-iron-info">
+                <h3>Hakko FX-888D</h3>
+                <p>Профессиональный цифровой паяльник с точным контролем температуры (50-480°C) и быстрым нагревом.</p>
+            </div>
+            <button class="vote-btn" data-id="1">Голосовать</button>
+            <span class="vote-count" id="count-1">5782</span>
+        </div>
+        
+        <div class="soldering-iron">
+            <img src="https://cdn1.ozone.ru/s3/multimedia-8/6352155752.jpg" alt="Паяльник Weller WE1010">
+            <div class="soldering-iron-info">
+                <h3>Weller WE1010</h3>
+                <p>Надежная паяльная станция с сенсорным управлением и защитой от электростатического разряда.</p>
+            </div>
+            <button class="vote-btn" data-id="2">Голосовать</button>
+            <span class="vote-count" id="count-2">10598</span>
+        </div>
+        
+        <div class="soldering-iron">
+            <img src="https://avatars.mds.yandex.net/i?id=3dbfb62e62f77eb913195bb794910a74_sr-4843317-images-thumbs&n=13" alt="Паяльник KSGER T12">
+            <div class="soldering-iron-info">
+                <h3>KSGER T12</h3>
+                <p>Бюджетная, но мощная паяльная станция с OLED-дисплеем и поддержкой сменных жал.</p>
+            </div>
+            <button class="vote-btn" data-id="3">Голосовать</button>
+            <span class="vote-count" id="count-3">8485</span>
+        </div>
+        
+        <div class="soldering-iron">
+            <img src="https://cdn1.ozone.ru/s3/multimedia-w/c600/6026815028.jpg" alt="Паяльник JBC CD-2BQE">
+            <div class="soldering-iron-info">
+                <h3>JBC CD-2BQE</h3>
+                <p>Высококлассная профессиональная станция с ультрабыстрым нагревом (до 400°C за 3 секунды).</p>
+            </div>
+            <button class="vote-btn" data-id="4">Голосовать</button>
+            <span class="vote-count" id="count-4">8712</span>
+        </div>
+        
+        <div class="soldering-iron">
+            <img src="https://siriust.ru/images/watermarked/1/detailed/44/М0036930_2.jpg" alt="Паяльник Aoyue 968A+">
+            <div class="soldering-iron-info">
+                <h3>Aoyue 968A+</h3>
+                <p>Многофункциональная станция с паяльником, феном и вакуумным пинцетом для SMD-компонентов.</p>
+            </div>
+            <button class="vote-btn" data-id="5">Голосовать</button>
+            <span class="vote-count" id="count-5">7420</span>
+        </div>
+    </div>
+    
+    <footer>
+        <p>© 2025 Голосование за лучший паяльник. Все права защищены.</p>
+        <p>Для участия в голосовании необходимо согласие на обработку персональных данных.</p>
+    </footer>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Загрузка результатов из localStorage
+            for (let i = 1; i <= 5; i++) {
+                const count = localStorage.getItem(`votes-${i}`) || 0;
+                document.getElementById(`count-${i}`).textContent = count;}
+            //Считывание повторного голосования
+            // Обработка голосования
+
+            const voteButtons = document.querySelectorAll('.vote-btn');
+            voteButtons.forEach(button => {
+                button.addEventListener('click', function() {
+
+                    var element = document.querySelector(':root');
+                    var styles = getComputedStyle(element);
+                    var value = styles.getPropertyValue('--mark');
+                    if (value== "false"){
+                        const id = this.getAttribute('data-id');
+                        const countElement = document.getElementById(`count-${id}`);
+                        let count = parseInt(countElement.textContent);
+                        count ++ ;
+                        countElement.textContent = count;
+                        localStorage.setItem(`votes-${id}`, count);  
+                        alert('Спасибо за ваш голос!');
+
+                        var element = document.querySelector(':root');
+                        var styles = getComputedStyle(element);
+                        var value = styles.getPropertyValue('--mark');                  
+                        element.style.setProperty('--mark','true');
+
+                        return;};   
+                    if(value =="true"){alert("Вы уже проголосовали!"); return;};                        
+                }); //addEventListener
+            }); //forEach
+
+        });
+    </script>
+</body>
+</html>
